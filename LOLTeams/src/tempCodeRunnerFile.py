@@ -1,0 +1,11 @@
+class mainPage:
+#     mainWin = tk.Tk()
+#     mainWin.geometry("1000x500")
+#     mainWin.title("LOL Teams mainPage")
+#     tk.Label(text="시작").pack()
+#     ent = tk.Entry(width=10)
+#     ent.pack()
+#     btn = tk.Button(text="입장", width=10, height=3)
+#     btn.config(command=checkMatchHistory)
+#     btn.pack()
+#     mainWin.mainloop()
