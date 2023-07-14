@@ -1,0 +1,2 @@
+
+sheetnames = ['saveGameMatchTeamSetting', 'saveUserInfo']

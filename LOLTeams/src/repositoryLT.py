@@ -42,12 +42,14 @@ def getUserList():
 
 
 def saveGameMatchTeamSetting(info):
-    sheetName = "saveGameMatchTeamSetting"
+    import Util
+    sheetName = Util.sheetnames[0]
     print(pyName+sheetName)
     sheetAutoCheckAndInsert(info, sheetName, 5)
 
 
 def saveUserInfo(info):
-    sheetName = "saveUserInfo"
+    import Util
+    sheetName = Util.sheetnames[1]
     print(pyName+sheetName)
     sheetAutoCheckAndInsert(info, sheetName, 3)
