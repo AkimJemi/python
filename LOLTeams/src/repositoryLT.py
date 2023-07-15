@@ -1,6 +1,9 @@
 from openpyxl import load_workbook
+import Util as u
 dbFileName = "db/db.xlsx"
 pyName = "repositoryLT"
+
+u.showLog(__file__, None, None)
 
 
 def sheetAutoCheckAndInsert(info, sheetName, num):
@@ -32,8 +35,10 @@ def sheetAutoCheckAndInsert(info, sheetName, num):
 
 def getUserList():
     print(pyName+"getUserList")
+    import Util
+    sheetName = Util.sheetnames[1]
     wb = load_workbook(filename=dbFileName, data_only=True)
-    ws = wb.active
+    ws = wb[sheetName]
     userList = []
     for y in range(1, ws.max_row+1):
         userList.append(ws.cell(column=2, row=y).value)
@@ -53,3 +58,4 @@ def saveUserInfo(info):
     sheetName = Util.sheetnames[1]
     print(pyName+sheetName)
     sheetAutoCheckAndInsert(info, sheetName, 3)
+    from mainPage import setUserList

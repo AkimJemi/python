@@ -1,1 +1,0 @@
-wb.create_sheet(sheet_name, idx)
