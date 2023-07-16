@@ -1,12 +1,16 @@
 from openpyxl import load_workbook
 import Util as u
-dbFileName = "db/db.xlsx"
-pyName = "repositoryLT"
-
 u.showLog(__file__, None, None)
+dbFileName = u.dbFileName
 
 
 def sheetAutoCheckAndInsert(info, sheetName, num):
+    for i in info:
+        if i == '' or i == None:
+            ms
+
+    u.showLog(__file__, sheetAutoCheckAndInsert.__name__,
+              "info : {}, sheetName : {}, num : {}".format(info, sheetName, num))
     wb = load_workbook(dbFileName)
     ws = wb.active
     ws_names = wb.sheetnames
@@ -34,9 +38,8 @@ def sheetAutoCheckAndInsert(info, sheetName, num):
 
 
 def getUserList():
-    print(pyName+"getUserList")
-    import Util
-    sheetName = Util.sheetnames[1]
+    u.showLog(__file__, getUserList.__name__, None)
+    sheetName = u.sheetnames[1]
     wb = load_workbook(filename=dbFileName, data_only=True)
     ws = wb[sheetName]
     userList = []
@@ -47,15 +50,19 @@ def getUserList():
 
 
 def saveGameMatchTeamSetting(info):
-    import Util
-    sheetName = Util.sheetnames[0]
-    print(pyName+sheetName)
+    u.showLog(__file__, saveGameMatchTeamSetting.__name__, info)
+    sheetName = u.sheetnames[0]
     sheetAutoCheckAndInsert(info, sheetName, 5)
 
 
 def saveUserInfo(info):
-    import Util
-    sheetName = Util.sheetnames[1]
-    print(pyName+sheetName)
+    u.showLog(__file__, saveUserInfo.__name__, info)
+    sheetName = u.sheetnames[1]
+    sheetAutoCheckAndInsert(info, sheetName, 3)
+
+
+def saveUserInfo(info):
+    u.showLog(__file__, saveUserInfo.__name__, info)
+    sheetName = u.sheetnames[1]
     sheetAutoCheckAndInsert(info, sheetName, 3)
     from mainPage import setUserList

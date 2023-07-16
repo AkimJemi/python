@@ -1,8 +1,7 @@
 import tkinter as tk
-from tkinter import messagebox as msg
 from PIL import ImageTk, Image
 import Util as u
-
+        
 
 u.showLog(__file__, None, None)
 
@@ -11,13 +10,12 @@ def checkExecutionCode():
     u.showLog(__file__, checkExecutionCode.__name__, None)
     password = initEnt.get()
     if (password.__eq__("")):
-        msg.showinfo(title='log-in succeed', message='Welcome to LOL Teams')
+        u.showinfo(title='log-in succeed', message='Welcome to LOL Teams')
         initWin.destroy()
-
         import mainPage
     else:
-        msg.showerror(title='log-in fail',
-                      message='The entered password is incorrect')
+        u.showerror(title='log-in fail',
+                    message='The entered password is incorrect')
         print('The entered password is : {}'.format(password))
 
 

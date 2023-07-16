@@ -1,18 +1,11 @@
 import tkinter as tk
 import repositoryLT as rp
 import Util as u
-
 u.showLog(__file__, None, None)
-
-
-def saveUser():
-    u.showLog(__file__, saveUser.__name__, None)
-    rp.saveUserInfo(info=[FF_ent.get(), FF_ent2.get(), FF_ent3.get()])
-
 
 userSiginWin = tk.Tk()
 userSiginWin.geometry("400x300")
-userSiginWin.title("LOL Teams userSignIn")
+userSiginWin.title(u.getTitle(__file__))
 frame = tk.Frame(userSiginWin)
 frame.pack()
 
@@ -37,6 +30,12 @@ FF_lab3.grid(row=2, column=0)
 FF_ent3 = tk.Entry(first_frame)
 FF_ent3.config(show="*")
 FF_ent3.grid(row=2, column=1)
+
+
+def saveUser():
+    u.showLog(__file__, saveUser.__name__, None)
+    rp.saveUserInfo(info=[FF_ent.get(), FF_ent2.get(), FF_ent3.get()])
+
 
 FF_userSignIn_insert_btn = tk.Button(first_frame, text="출력")
 FF_userSignIn_insert_btn.config(command=saveUser)

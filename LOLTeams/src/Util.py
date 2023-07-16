@@ -1,9 +1,19 @@
 from datetime import datetime as date
 from pathlib import Path as path
 from inspect import currentframe as cf
+from tkinter import messagebox as msg
 
 init = "init"
+dbFileName = "db/db.xlsx"
 sheetnames = ['saveGameMatchTeamSetting', 'saveUserInfo']
+
+
+def showinfo(title, message):
+    msg.showinfo(title=title, message=message)
+
+
+def showerror(title, message):
+    msg.showerror(title=title, message=message)
 
 
 def showLog(py, method, msg,):
@@ -11,7 +21,12 @@ def showLog(py, method, msg,):
         method = init
     if msg == None:
         msg = ''
-    print("{} : {}. {} {}".format(date.now(), py.split('\\')[-1], method, msg))
+    print("{} : {} . {} {}".format(
+        date.now(), py.split('\\')[-1], "{}()".format(method), msg))
+
+
+def getTitle(file):
+    return file.split('\\')[-1].split('.')[0]
 
 
 def getPythonFileName():
