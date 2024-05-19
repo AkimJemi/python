@@ -25,4 +25,5 @@ while True:
         print("please type a number")
 
 
+print("neka hi")
 
