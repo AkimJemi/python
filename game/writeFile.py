@@ -1,14 +1,3 @@
 
-w
-f
-g
-w
-q
-r
-f
-e
-q
-g
-v
-c
-grgagaerg
+hi
+my name is aaa

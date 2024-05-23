@@ -13,18 +13,19 @@ def file_read():
     return file_content
 
 
-def file_write(text):
+def file_write(input_text):
     origin_text = file_read()
     writer = open(target_file, "w")
-    writer.write(origin_text + "\n" + text)
+    writer.write(origin_text + "\n" + input_text)
     writer.close()
 
 
 while True:
     text = input("what you want to type? : ")
-    if text == "@":
+    if text == "q":
         break
     else:
         file_write(text)
+
 
 print(file_read())
