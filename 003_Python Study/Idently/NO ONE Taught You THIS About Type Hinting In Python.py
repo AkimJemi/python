@@ -1,0 +1,10 @@
+string: str = "string"
+_t: tuple[int, ...] = (2, 2, 3)
+_t2: tuple[str, ...] = ('a', "Tsr")
+_t3: tuple[int | str, ...] = ('a', 2, True)
+_t4: tuple[bool | str, ...] = ('a', True)
+_t5: tuple[bool | int, ...] = (2, True)
+_t6: tuple[int and bool, ...] = ('a', 2, True)
+_t7: tuple[int or bool, ...] = (2, True)
+print(_t6)
+print(_t7)
